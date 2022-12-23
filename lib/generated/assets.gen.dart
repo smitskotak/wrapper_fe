@@ -16,12 +16,21 @@ class $AssetsImagesGen {
   AssetGenImage get cherryLogo =>
       const AssetGenImage('assets/images/cherry_logo.png');
 
+  /// File path: assets/images/cherry_logo_colored.png
+  AssetGenImage get cherryLogoColored =>
+      const AssetGenImage('assets/images/cherry_logo_colored.png');
+
+  /// File path: assets/images/story-3-background.png
+  AssetGenImage get story3Background =>
+      const AssetGenImage('assets/images/story-3-background.png');
+
   /// File path: assets/images/story_2_background.png
   AssetGenImage get story2Background =>
       const AssetGenImage('assets/images/story_2_background.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [cherryLogo, story2Background];
+  List<AssetGenImage> get values =>
+      [cherryLogo, cherryLogoColored, story3Background, story2Background];
 }
 
 class $AssetsLottieGen {
@@ -31,8 +40,11 @@ class $AssetsLottieGen {
   String get story2PieIllustration =>
       'assets/lottie/story-2-pie-illustration.json';
 
+  /// File path: assets/lottie/story-3-character.json
+  String get story3Character => 'assets/lottie/story-3-character.json';
+
   /// List of all assets
-  List<String> get values => [story2PieIllustration];
+  List<String> get values => [story2PieIllustration, story3Character];
 }
 
 class Assets {
