@@ -24,13 +24,22 @@ class $AssetsImagesGen {
   AssetGenImage get story3Background =>
       const AssetGenImage('assets/images/story-3-background.png');
 
+  /// File path: assets/images/story-4-background.png
+  AssetGenImage get story4Background =>
+      const AssetGenImage('assets/images/story-4-background.png');
+
   /// File path: assets/images/story_2_background.png
   AssetGenImage get story2Background =>
       const AssetGenImage('assets/images/story_2_background.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [cherryLogo, cherryLogoColored, story3Background, story2Background];
+  List<AssetGenImage> get values => [
+        cherryLogo,
+        cherryLogoColored,
+        story3Background,
+        story4Background,
+        story2Background
+      ];
 }
 
 class $AssetsLottieGen {
@@ -43,8 +52,31 @@ class $AssetsLottieGen {
   /// File path: assets/lottie/story-3-character.json
   String get story3Character => 'assets/lottie/story-3-character.json';
 
+  /// File path: assets/lottie/story-4-adventurer-illustration.json
+  String get story4AdventurerIllustration =>
+      'assets/lottie/story-4-adventurer-illustration.json';
+
+  /// File path: assets/lottie/story-4-defender-character.json
+  String get story4DefenderCharacter =>
+      'assets/lottie/story-4-defender-character.json';
+
+  /// File path: assets/lottie/story-4-defender-temple_tree.json
+  String get story4DefenderTempleTree =>
+      'assets/lottie/story-4-defender-temple_tree.json';
+
+  /// File path: assets/lottie/story-4-explorer-clouds.json
+  String get story4ExplorerClouds =>
+      'assets/lottie/story-4-explorer-clouds.json';
+
   /// List of all assets
-  List<String> get values => [story2PieIllustration, story3Character];
+  List<String> get values => [
+        story2PieIllustration,
+        story3Character,
+        story4AdventurerIllustration,
+        story4DefenderCharacter,
+        story4DefenderTempleTree,
+        story4ExplorerClouds
+      ];
 }
 
 class Assets {
