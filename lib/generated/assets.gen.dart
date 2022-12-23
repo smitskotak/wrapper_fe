@@ -16,23 +16,90 @@ class $AssetsImagesGen {
   AssetGenImage get cherryLogo =>
       const AssetGenImage('assets/images/cherry_logo.png');
 
-  /// File path: assets/images/story_2_background.png
+  /// File path: assets/images/cherry_logo_colored.png
+  AssetGenImage get cherryLogoColored =>
+      const AssetGenImage('assets/images/cherry_logo_colored.png');
+
+  /// File path: assets/images/story-1-background.png
+  AssetGenImage get story1Background =>
+      const AssetGenImage('assets/images/story-1-background.png');
+
+  /// File path: assets/images/story-2-background.png
   AssetGenImage get story2Background =>
-      const AssetGenImage('assets/images/story_2_background.png');
+      const AssetGenImage('assets/images/story-2-background.png');
+
+  /// File path: assets/images/story-3-background.png
+  AssetGenImage get story3Background =>
+      const AssetGenImage('assets/images/story-3-background.png');
+
+  /// File path: assets/images/story-4-background.png
+  AssetGenImage get story4Background =>
+      const AssetGenImage('assets/images/story-4-background.png');
+
+  /// File path: assets/images/story-5-background.png
+  AssetGenImage get story5Background =>
+      const AssetGenImage('assets/images/story-5-background.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [cherryLogo, story2Background];
+  List<AssetGenImage> get values => [
+        cherryLogo,
+        cherryLogoColored,
+        story1Background,
+        story2Background,
+        story3Background,
+        story4Background,
+        story5Background
+      ];
 }
 
 class $AssetsLottieGen {
   const $AssetsLottieGen();
 
+  /// File path: assets/lottie/story-1-confetti_dangler.json
+  String get story1ConfettiDangler =>
+      'assets/lottie/story-1-confetti_dangler.json';
+
   /// File path: assets/lottie/story-2-pie-illustration.json
   String get story2PieIllustration =>
       'assets/lottie/story-2-pie-illustration.json';
 
+  /// File path: assets/lottie/story-3-character.json
+  String get story3Character => 'assets/lottie/story-3-character.json';
+
+  /// File path: assets/lottie/story-4-adventurer-illustration.json
+  String get story4AdventurerIllustration =>
+      'assets/lottie/story-4-adventurer-illustration.json';
+
+  /// File path: assets/lottie/story-4-defender-character.json
+  String get story4DefenderCharacter =>
+      'assets/lottie/story-4-defender-character.json';
+
+  /// File path: assets/lottie/story-4-defender-temple_tree.json
+  String get story4DefenderTempleTree =>
+      'assets/lottie/story-4-defender-temple_tree.json';
+
+  /// File path: assets/lottie/story-4-explorer-clouds.json
+  String get story4ExplorerClouds =>
+      'assets/lottie/story-4-explorer-clouds.json';
+
+  /// File path: assets/lottie/story-5-pie-chart.json
+  String get story5PieChart => 'assets/lottie/story-5-pie-chart.json';
+
+  /// File path: assets/lottie/story-6-illustration.json
+  String get story6Illustration => 'assets/lottie/story-6-illustration.json';
+
   /// List of all assets
-  List<String> get values => [story2PieIllustration];
+  List<String> get values => [
+        story1ConfettiDangler,
+        story2PieIllustration,
+        story3Character,
+        story4AdventurerIllustration,
+        story4DefenderCharacter,
+        story4DefenderTempleTree,
+        story4ExplorerClouds,
+        story5PieChart,
+        story6Illustration
+      ];
 }
 
 class Assets {

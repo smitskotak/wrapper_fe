@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:wrapper/components/diverse_portfolio_statement.dart';
 import 'package:wrapper/generated/assets.gen.dart';
 
 class Story2 extends StatelessWidget {
@@ -50,28 +51,7 @@ class Story2 extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  Text(
-                    'You have maintained a diverse folio with',
-                    style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white,
-                        fontSize: 12,
-                        height: 19.6 / 12,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'Stocks, Mutual funds and Bonds',
-                    style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        fontSize: 14,
-                        height: 19.6 / 14,
-                      ),
-                    ),
-                  ),
+                  const DiversePortfolioStatement(),
                 ],
               )
             ],
