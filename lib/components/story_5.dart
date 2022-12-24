@@ -137,7 +137,10 @@ class FundCard extends StatelessWidget {
               ],
             ),
           ),
-        ),
+        ).animate().fadeIn(
+              delay: 1.seconds,
+              duration: 500.milliseconds,
+            ),
         Positioned(
           top: -40,
           left: 0,
@@ -152,7 +155,11 @@ class FundCard extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(40),
                 ),
-              ),
+                // TODO: Add Image below
+                child: SizedBox(),
+              )
+                  .animate(delay: 1500.milliseconds)
+                  .scale(duration: 1.seconds, curve: Curves.easeInBack),
             ],
           ),
         ),
