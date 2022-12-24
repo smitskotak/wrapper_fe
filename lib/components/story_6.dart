@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:wrapper/generated/assets.gen.dart';
@@ -74,30 +75,44 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
                       height: 38 / 40,
                     ),
                   ),
-                ),
+                )
+                    .animate()
+                    .fadeIn(
+                      delay: 2700.milliseconds,
+                      duration: 700.milliseconds,
+                      curve: Curves.easeIn,
+                    )
+                    .scale(),
                 const SizedBox(height: 16),
-                Text(
-                  'For investing with Cherry',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.w400,
-                      color: Colors.white,
-                      fontSize: 12,
-                      height: 19.6 / 12,
+                Column(
+                  children: [
+                    Text(
+                      'For investing with Cherry',
+                      style: GoogleFonts.roboto(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white,
+                          fontSize: 12,
+                          height: 19.6 / 12,
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                Text(
-                  'since 21 March, 2019',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      fontSize: 14,
-                      height: 19.6 / 14,
+                    Text(
+                      'since 21 March, 2019',
+                      style: GoogleFonts.roboto(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          fontSize: 14,
+                          height: 19.6 / 14,
+                        ),
+                      ),
                     ),
-                  ),
-                ),
+                  ],
+                ).animate().fadeIn(
+                      delay: 3400.milliseconds,
+                      duration: 600.milliseconds,
+                    ),
               ],
             ),
           ),
