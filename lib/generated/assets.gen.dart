@@ -20,6 +20,10 @@ class $AssetsImagesGen {
   AssetGenImage get cherryLogoColored =>
       const AssetGenImage('assets/images/cherry_logo_colored.png');
 
+  /// File path: assets/images/storay-1-bottom-abstract.png
+  AssetGenImage get storay1BottomAbstract =>
+      const AssetGenImage('assets/images/storay-1-bottom-abstract.png');
+
   /// File path: assets/images/story-1-background.png
   AssetGenImage get story1Background =>
       const AssetGenImage('assets/images/story-1-background.png');
@@ -36,6 +40,18 @@ class $AssetsImagesGen {
   AssetGenImage get story4Background =>
       const AssetGenImage('assets/images/story-4-background.png');
 
+  /// File path: assets/images/story-4-explorer-character.png
+  AssetGenImage get story4ExplorerCharacter =>
+      const AssetGenImage('assets/images/story-4-explorer-character.png');
+
+  /// File path: assets/images/story-4-explorer-dark-stone.png
+  AssetGenImage get story4ExplorerDarkStone =>
+      const AssetGenImage('assets/images/story-4-explorer-dark-stone.png');
+
+  /// File path: assets/images/story-4-explorer-front-tree.png
+  AssetGenImage get story4ExplorerFrontTree =>
+      const AssetGenImage('assets/images/story-4-explorer-front-tree.png');
+
   /// File path: assets/images/story-5-background.png
   AssetGenImage get story5Background =>
       const AssetGenImage('assets/images/story-5-background.png');
@@ -44,10 +60,14 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [
         cherryLogo,
         cherryLogoColored,
+        storay1BottomAbstract,
         story1Background,
         story2Background,
         story3Background,
         story4Background,
+        story4ExplorerCharacter,
+        story4ExplorerDarkStone,
+        story4ExplorerFrontTree,
         story5Background
       ];
 }
@@ -55,9 +75,17 @@ class $AssetsImagesGen {
 class $AssetsLottieGen {
   const $AssetsLottieGen();
 
-  /// File path: assets/lottie/story-1-confetti_dangler.json
-  String get story1ConfettiDangler =>
-      'assets/lottie/story-1-confetti_dangler.json';
+  /// File path: assets/lottie/cherry_logo_animation.json
+  String get cherryLogoAnimation => 'assets/lottie/cherry_logo_animation.json';
+
+  /// File path: assets/lottie/confetti_dangler.json
+  String get confettiDangler => 'assets/lottie/confetti_dangler.json';
+
+  /// File path: assets/lottie/story-1-logo-with-text.json
+  String get story1LogoWithText => 'assets/lottie/story-1-logo-with-text.json';
+
+  /// File path: assets/lottie/story-1-wine-glass.json
+  String get story1WineGlass => 'assets/lottie/story-1-wine-glass.json';
 
   /// File path: assets/lottie/story-2-pie-illustration.json
   String get story2PieIllustration =>
@@ -90,7 +118,10 @@ class $AssetsLottieGen {
 
   /// List of all assets
   List<String> get values => [
-        story1ConfettiDangler,
+        cherryLogoAnimation,
+        confettiDangler,
+        story1LogoWithText,
+        story1WineGlass,
         story2PieIllustration,
         story3Character,
         story4AdventurerIllustration,
