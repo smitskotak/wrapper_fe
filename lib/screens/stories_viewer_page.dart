@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_stories/flutter_stories.dart';
+import 'package:wrapper/components/story_1.dart';
 import 'package:wrapper/components/story_2.dart';
 import 'package:wrapper/components/story_3.dart';
 import 'package:wrapper/components/story_4.dart';
@@ -19,6 +20,7 @@ class StoriesViewerPage extends StatelessWidget {
   const StoriesViewerPage({super.key});
 
   static Map<StoryType, WidgetBuilder> stories = {
+    StoryType.story1: (_) => const Story1(),
     StoryType.story2: (_) => const Story2(),
     StoryType.story3: (_) => const Story3(),
     StoryType.story4: (_) => const Story4(),
@@ -27,6 +29,7 @@ class StoriesViewerPage extends StatelessWidget {
   };
 
   static const Map<StoryType, Duration> storyDuration = {
+    StoryType.story1: Duration(seconds: 10),
     StoryType.story2: Duration(seconds: 6),
     StoryType.story3: Duration(seconds: 5),
     StoryType.story4: Duration(seconds: 6),

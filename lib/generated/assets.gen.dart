@@ -66,6 +66,9 @@ class $AssetsLottieGen {
   /// File path: assets/lottie/confetti_dangler.json
   String get confettiDangler => 'assets/lottie/confetti_dangler.json';
 
+  /// File path: assets/lottie/story-1-logo-with-text.json
+  String get story1LogoWithText => 'assets/lottie/story-1-logo-with-text.json';
+
   /// File path: assets/lottie/story-1-wine-glass.json
   String get story1WineGlass => 'assets/lottie/story-1-wine-glass.json';
 
@@ -102,6 +105,7 @@ class $AssetsLottieGen {
   List<String> get values => [
         cherryLogoAnimation,
         confettiDangler,
+        story1LogoWithText,
         story1WineGlass,
         story2PieIllustration,
         story3Character,
