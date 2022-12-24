@@ -40,6 +40,18 @@ class $AssetsImagesGen {
   AssetGenImage get story4Background =>
       const AssetGenImage('assets/images/story-4-background.png');
 
+  /// File path: assets/images/story-4-explorer-character.png
+  AssetGenImage get story4ExplorerCharacter =>
+      const AssetGenImage('assets/images/story-4-explorer-character.png');
+
+  /// File path: assets/images/story-4-explorer-dark-stone.png
+  AssetGenImage get story4ExplorerDarkStone =>
+      const AssetGenImage('assets/images/story-4-explorer-dark-stone.png');
+
+  /// File path: assets/images/story-4-explorer-front-tree.png
+  AssetGenImage get story4ExplorerFrontTree =>
+      const AssetGenImage('assets/images/story-4-explorer-front-tree.png');
+
   /// File path: assets/images/story-5-background.png
   AssetGenImage get story5Background =>
       const AssetGenImage('assets/images/story-5-background.png');
@@ -53,6 +65,9 @@ class $AssetsImagesGen {
         story2Background,
         story3Background,
         story4Background,
+        story4ExplorerCharacter,
+        story4ExplorerDarkStone,
+        story4ExplorerFrontTree,
         story5Background
       ];
 }
