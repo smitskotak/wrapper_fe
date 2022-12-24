@@ -40,6 +40,7 @@ class StoriesViewerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final availableStories = [
+      StoryType.story1,
       StoryType.story2,
       StoryType.story3,
       StoryType.story4,
