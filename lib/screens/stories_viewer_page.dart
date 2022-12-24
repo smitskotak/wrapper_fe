@@ -45,7 +45,7 @@ class StoriesViewerPage extends StatelessWidget {
     ];
     return Scaffold(
       body: Story(
-        momentCount: 5,
+        momentCount: availableStories.length,
         momentBuilder: (BuildContext context, int index) {
           final storyType = availableStories[index];
           final widget = stories[storyType]!(context);
