@@ -40,7 +40,7 @@ class _Story4State extends State<Story4> {
           fit: BoxFit.cover,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 62.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             children: [
               const SizedBox(height: 40),
