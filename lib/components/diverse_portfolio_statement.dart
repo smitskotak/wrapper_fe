@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:wrapper/models/user_summary.dart';
 
 class DiversePortfolioStatement extends StatelessWidget {
   const DiversePortfolioStatement({
@@ -8,6 +10,17 @@ class DiversePortfolioStatement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final investedIn = context.read<UserSummary>().investedIn;
+    final String investedString;
+    if (investedIn.length > 2) {
+      investedString =
+          '${investedIn.take(investedIn.length - 1).join(', ')} and ${investedIn.last}';
+    } else if (investedIn.length == 2) {
+      investedString = investedIn.join(' and ');
+    } else {
+      investedString = investedIn.join();
+    }
+
     return Column(
       children: [
         Text(
@@ -22,7 +35,7 @@ class DiversePortfolioStatement extends StatelessWidget {
           ),
         ),
         Text(
-          'Stocks, Mutual funds and Bonds',
+          investedString,
           style: GoogleFonts.roboto(
             textStyle: const TextStyle(
               fontWeight: FontWeight.w900,

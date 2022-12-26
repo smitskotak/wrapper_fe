@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:wrapper/components/diverse_portfolio_statement.dart';
+import 'package:provider/provider.dart';
 import 'package:wrapper/generated/assets.gen.dart';
+import 'package:wrapper/models/user_summary.dart';
 
 enum Story4Type {
   explorer,
@@ -11,27 +12,38 @@ enum Story4Type {
   adventurer,
 }
 
-class Story4 extends StatefulWidget {
+class Story4 extends StatelessWidget {
   const Story4({super.key});
 
   static const normalTextColor = Color(0xFF2A3450);
 
   @override
-  State<Story4> createState() => _Story4State();
-}
-
-class _Story4State extends State<Story4> {
-  late Story4Type _storytype;
-
-  @override
-  void initState() {
-    _storytype = Story4Type.explorer;
-
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final summary = context.read<UserSummary>();
+    Story4Type storytype;
+    String title;
+    String suffix;
+    switch (summary.personality) {
+      case 'defender':
+        storytype = Story4Type.defender;
+        title = 'DEFENDER';
+        suffix = 'a';
+        break;
+      case 'explorer':
+        storytype = Story4Type.explorer;
+        title = 'EXPLORER';
+        suffix = 'an';
+        break;
+      case 'adventurer':
+        storytype = Story4Type.adventurer;
+        title = 'ADVENTURER';
+        suffix = 'an';
+        break;
+      default:
+        storytype = Story4Type.defender;
+        title = 'DEFENDER';
+        suffix = 'a';
+    }
     return Stack(
       fit: StackFit.expand,
       children: [
@@ -47,7 +59,7 @@ class _Story4State extends State<Story4> {
               Image.asset(Assets.images.cherryLogo.path),
               const SizedBox(height: 55),
               Text(
-                'You are an',
+                'You are $suffix',
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.w500,
@@ -62,7 +74,7 @@ class _Story4State extends State<Story4> {
                   ),
               const SizedBox(height: 20),
               Text(
-                'EXPLORER',
+                title,
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -77,16 +89,51 @@ class _Story4State extends State<Story4> {
                   .move(begin: const Offset(0, -50), end: Offset.zero)
                   .scale(),
               const SizedBox(height: 16),
-              const DiversePortfolioStatement()
-                  .animate()
-                  .fadeIn(delay: 1200.milliseconds, duration: 500.milliseconds),
+              if (summary.equityExposure != null)
+                RichText(
+                  text: TextSpan(
+                    text: 'You have ',
+                    style: GoogleFonts.roboto(
+                      textStyle: const TextStyle(
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                        fontSize: 12,
+                        height: 19.6 / 12,
+                      ),
+                    ),
+                    children: [
+                      TextSpan(
+                        text: summary.equityExposure!,
+                        style: GoogleFonts.roboto(
+                          textStyle: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 12,
+                            height: 19.6 / 12,
+                          ),
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' exposure in equity',
+                        style: GoogleFonts.roboto(
+                          textStyle: const TextStyle(
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                            fontSize: 12,
+                            height: 19.6 / 12,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ).animate().fadeIn(
+                    delay: 1200.milliseconds, duration: 500.milliseconds),
             ],
           ),
         ),
-        if (_storytype == Story4Type.explorer) const ExplorerIllustrations(),
-        if (_storytype == Story4Type.defender) const DefenderIllustrations(),
-        if (_storytype == Story4Type.adventurer)
-          const AdventurerIllustrations(),
+        if (storytype == Story4Type.defender) const DefenderIllustrations(),
+        if (storytype == Story4Type.explorer) const ExplorerIllustrations(),
+        if (storytype == Story4Type.adventurer) const AdventurerIllustrations(),
       ],
     );
   }
@@ -109,6 +156,13 @@ class ExplorerIllustrations extends StatelessWidget {
           child: LottieBuilder.asset(
             Assets.lottie.story4ExplorerClouds,
             repeat: false,
+          ),
+        ),
+        Positioned(
+          bottom: 0,
+          left: 0,
+          child: Image.asset(
+            Assets.images.story4ExplorerLeftTree.path,
           ),
         ),
         Positioned(

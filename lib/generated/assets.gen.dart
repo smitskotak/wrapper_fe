@@ -52,6 +52,10 @@ class $AssetsImagesGen {
   AssetGenImage get story4ExplorerFrontTree =>
       const AssetGenImage('assets/images/story-4-explorer-front-tree.png');
 
+  /// File path: assets/images/story-4-explorer-left-tree.png
+  AssetGenImage get story4ExplorerLeftTree =>
+      const AssetGenImage('assets/images/story-4-explorer-left-tree.png');
+
   /// File path: assets/images/story-5-background.png
   AssetGenImage get story5Background =>
       const AssetGenImage('assets/images/story-5-background.png');
@@ -68,6 +72,7 @@ class $AssetsImagesGen {
         story4ExplorerCharacter,
         story4ExplorerDarkStone,
         story4ExplorerFrontTree,
+        story4ExplorerLeftTree,
         story5Background
       ];
 }

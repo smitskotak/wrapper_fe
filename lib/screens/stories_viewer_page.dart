@@ -54,50 +54,53 @@ class StoriesViewerPage extends StatelessWidget {
                   child: CircularProgressIndicator(),
                 );
               } else if (state is StoriesLoaded) {
-                return Story(
-                  momentCount: state.availableStories.length,
-                  momentBuilder: (BuildContext context, int index) {
-                    final storyType = state.availableStories[index];
-                    final widget = stories[storyType]!(context);
-                    return Column(
-                      children: [
-                        SizedBox(
-                          height: MediaQuery.of(context).padding.top + 24,
-                        ),
-                        Expanded(
-                          child: ClipRRect(
-                            borderRadius: const BorderRadius.vertical(
-                              top: Radius.circular(16),
-                            ),
-                            child: widget,
-                          ),
-                        ),
-                      ],
-                    );
-                  },
-                  momentDurationGetter: (int? index) {
-                    if (index != null) {
+                return Provider.value(
+                  value: state.userSummary,
+                  child: Story(
+                    momentCount: state.availableStories.length,
+                    momentBuilder: (BuildContext context, int index) {
                       final storyType = state.availableStories[index];
-                      return storyDuration[storyType]!;
-                    } else {
-                      return const Duration(seconds: 5);
-                    }
-                  },
-                  progressSegmentGap: 6,
-                  progressSegmentBuilder: (context, index, progress, gap) =>
-                      Container(
-                    clipBehavior: Clip.antiAlias,
-                    height: 6.0,
-                    margin: EdgeInsets.symmetric(horizontal: gap / 2),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFAE1E1),
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    child: FractionallySizedBox(
-                      alignment: Alignment.centerLeft,
-                      widthFactor: progress,
-                      child: Container(
-                        color: const Color(0xffDD2C2C),
+                      final widget = stories[storyType]!(context);
+                      return Column(
+                        children: [
+                          SizedBox(
+                            height: MediaQuery.of(context).padding.top + 24,
+                          ),
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: const BorderRadius.vertical(
+                                top: Radius.circular(16),
+                              ),
+                              child: widget,
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                    momentDurationGetter: (int? index) {
+                      if (index != null) {
+                        final storyType = state.availableStories[index];
+                        return storyDuration[storyType]!;
+                      } else {
+                        return const Duration(seconds: 5);
+                      }
+                    },
+                    progressSegmentGap: 6,
+                    progressSegmentBuilder: (context, index, progress, gap) =>
+                        Container(
+                      clipBehavior: Clip.antiAlias,
+                      height: 6.0,
+                      margin: EdgeInsets.symmetric(horizontal: gap / 2),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFAE1E1),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: FractionallySizedBox(
+                        alignment: Alignment.centerLeft,
+                        widthFactor: progress,
+                        child: Container(
+                          color: const Color(0xffDD2C2C),
+                        ),
                       ),
                     ),
                   ),
