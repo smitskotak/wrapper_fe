@@ -7,7 +7,7 @@ class UserSummaryService {
   Future<UserSummary> getUserSummary(String id) async {
     // TODO: Replace with Unique Id based API
     final response = await Dio().get(
-      'http://3.111.30.21:4000/api/v1/roundup',
+      'https://api.cherryko.tk/api/v1/roundup',
       queryParameters: {
         'iecu_id': id,
       },
