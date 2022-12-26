@@ -72,11 +72,14 @@ class StoriesViewerPage extends StatelessWidget {
                             height: MediaQuery.of(context).padding.top + 24,
                           ),
                           Expanded(
-                            child: ClipRRect(
-                              borderRadius: const BorderRadius.vertical(
-                                top: Radius.circular(16),
+                            child: ConstrainedBox(
+                              constraints: const BoxConstraints(maxWidth: 430),
+                              child: ClipRRect(
+                                borderRadius: const BorderRadius.vertical(
+                                  top: Radius.circular(16),
+                                ),
+                                child: widget,
                               ),
-                              child: widget,
                             ),
                           ),
                         ],
