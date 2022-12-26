@@ -14,7 +14,7 @@ class UserSummaryService {
     );
 
     if (response.statusCode == HttpStatus.ok) {
-      final json = Map<String, dynamic>.from(response.data['roundup'].first);
+      final json = Map<String, dynamic>.from(response.data['roundup']);
       return UserSummary.fromJson(json);
     } else {
       throw Exception('Could not fetch data!');
