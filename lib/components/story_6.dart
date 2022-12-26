@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 import 'package:wrapper/generated/assets.gen.dart';
+import 'package:wrapper/models/user_summary.dart';
 
 class Story6 extends StatefulWidget {
   const Story6({super.key});
@@ -27,7 +30,23 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    _logoAnimator.dispose();
+    _bottomIllustrationAnimator.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final summary = context.read<UserSummary>();
+    String date;
+    try {
+      date = DateFormat('dd MMMM, yyyy')
+          .format(DateTime.parse(summary.dateOfOnboarding));
+    } catch (_) {
+      date = summary.dateOfOnboarding;
+    }
+
     return Stack(
       fit: StackFit.expand,
       children: [
@@ -98,7 +117,7 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
                       ),
                     ),
                     Text(
-                      'since 21 March, 2019',
+                      'since $date',
                       style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.w900,

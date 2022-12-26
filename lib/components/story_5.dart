@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 import 'package:wrapper/generated/assets.gen.dart';
+import 'package:wrapper/models/user_summary.dart';
 
 class Story5 extends StatelessWidget {
   const Story5({super.key});
@@ -66,6 +68,11 @@ class FundCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final summary = context.read<UserSummary>();
+    final topItem = summary.topInvested;
+    if (topItem == null) {
+      return const SizedBox();
+    }
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -91,7 +98,7 @@ class FundCard extends StatelessWidget {
                 const SizedBox(height: 40),
                 const SizedBox(height: 12),
                 Text(
-                  'Kotak Infrastructure and Economic Reform Fund Direct Growth',
+                  topItem.name,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.roboto(
                     textStyle: const TextStyle(
@@ -117,7 +124,7 @@ class FundCard extends StatelessWidget {
                     ),
                     children: [
                       TextSpan(
-                        text: '4%',
+                        text: '${topItem.percent.toInt()}%',
                         style: GoogleFonts.roboto(
                           textStyle: const TextStyle(
                             fontWeight: FontWeight.bold,

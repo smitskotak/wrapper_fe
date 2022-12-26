@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 import 'package:wrapper/generated/assets.gen.dart';
+import 'package:wrapper/models/user_summary.dart';
 
 class Story3 extends StatelessWidget {
   const Story3({super.key});
@@ -11,6 +13,7 @@ class Story3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final summary = context.read<UserSummary>();
     return Stack(
       fit: StackFit.expand,
       children: [
@@ -43,7 +46,7 @@ class Story3 extends StatelessWidget {
               ).animate().fadeIn(duration: 1.seconds),
               const SizedBox(height: 30),
               Text(
-                'TOP 3%',
+                "TOP ${summary.topPercent ?? ''}%",
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.bold,
