@@ -13,7 +13,12 @@ import 'package:wrapper/services/user_summary_service.dart';
 import 'package:wrapper/view_models/stories_viewer_view_model.dart';
 
 class StoriesViewerPage extends StatelessWidget {
-  const StoriesViewerPage({super.key});
+  const StoriesViewerPage({
+    super.key,
+    required this.id,
+  });
+
+  final String id;
 
   static Map<StoryType, WidgetBuilder> stories = {
     StoryType.story1: (_) => const Story1(),
@@ -38,9 +43,8 @@ class StoriesViewerPage extends StatelessWidget {
     return Scaffold(
       body: ChangeNotifierProvider(
         create: (context) {
-          // TODO: Parse ID from Url and pass it
           return StoriesViewerViewModel(
-            id: '10000009',
+            id: id,
             userSummaryService: UserSummaryService(),
           )..fetch();
         },
