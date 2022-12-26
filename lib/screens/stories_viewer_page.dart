@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_stories/flutter_stories.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:wrapper/components/story_1.dart';
 import 'package:wrapper/components/story_2.dart';
@@ -7,6 +8,7 @@ import 'package:wrapper/components/story_3.dart';
 import 'package:wrapper/components/story_4.dart';
 import 'package:wrapper/components/story_5.dart';
 import 'package:wrapper/components/story_6.dart';
+import 'package:wrapper/generated/assets.gen.dart';
 import 'package:wrapper/services/user_summary_service.dart';
 import 'package:wrapper/view_models/stories_viewer_view_model.dart';
 
@@ -49,7 +51,6 @@ class StoriesViewerPage extends StatelessWidget {
               if (state is StoriesInitial) {
                 return const SizedBox();
               } else if (state is StoriesLoading) {
-                // TODO: Add some cool Lottie animation
                 return const Center(
                   child: CircularProgressIndicator(),
                 );
@@ -106,9 +107,11 @@ class StoriesViewerPage extends StatelessWidget {
                   ),
                 );
               } else {
-                // TODO: Add some cool Lottie animation
-                return const Center(
-                  child: Text('Uh no! Something went wrong.'),
+                return Center(
+                  child: LottieBuilder.asset(
+                    Assets.lottie.error,
+                    repeat: false,
+                  ),
                 );
               }
             },

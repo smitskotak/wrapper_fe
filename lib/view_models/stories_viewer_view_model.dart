@@ -19,7 +19,6 @@ class StoriesViewerViewModel extends ChangeNotifier {
 
     try {
       final summary = await userSummaryService.getUserSummary(id);
-      // TODO: Compute Stories availability based on data.
       final availableStories = [
         StoryType.story1,
         StoryType.story2,
