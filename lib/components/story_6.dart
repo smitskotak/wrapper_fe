@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:wrapper/generated/assets.gen.dart';
@@ -38,6 +39,13 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final summary = context.read<UserSummary>();
+    String date;
+    try {
+      date = DateFormat('dd MMMM, yyyy')
+          .format(DateTime.parse(summary.dateOfOnboarding));
+    } catch (_) {
+      date = summary.dateOfOnboarding;
+    }
 
     return Stack(
       fit: StackFit.expand,
@@ -108,9 +116,8 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
                         ),
                       ),
                     ),
-                    // TODO: Format Date as per XD
                     Text(
-                      'since ${summary.dateOfOnboarding}',
+                      'since $date',
                       style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.w900,
