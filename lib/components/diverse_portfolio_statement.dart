@@ -29,8 +29,8 @@ class DiversePortfolioStatement extends StatelessWidget {
             textStyle: const TextStyle(
               fontWeight: FontWeight.w400,
               color: Colors.white,
-              fontSize: 12,
-              height: 19.6 / 12,
+              fontSize: 14,
+              height: 19.6 / 14,
             ),
           ),
         ),
@@ -40,8 +40,8 @@ class DiversePortfolioStatement extends StatelessWidget {
             textStyle: const TextStyle(
               fontWeight: FontWeight.w900,
               color: Colors.white,
-              fontSize: 14,
-              height: 19.6 / 14,
+              fontSize: 16,
+              height: 19.6 / 16,
             ),
           ),
         ),

@@ -97,8 +97,8 @@ class Story4 extends StatelessWidget {
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.w400,
                         color: Colors.white,
-                        fontSize: 12,
-                        height: 19.6 / 12,
+                        fontSize: 14,
+                        height: 19.6 / 14,
                       ),
                     ),
                     children: [
@@ -108,8 +108,8 @@ class Story4 extends StatelessWidget {
                           textStyle: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
-                            fontSize: 12,
-                            height: 19.6 / 12,
+                            fontSize: 14,
+                            height: 19.6 / 14,
                           ),
                         ),
                       ),
@@ -119,8 +119,8 @@ class Story4 extends StatelessWidget {
                           textStyle: const TextStyle(
                             fontWeight: FontWeight.w400,
                             color: Colors.white,
-                            fontSize: 12,
-                            height: 19.6 / 12,
+                            fontSize: 14,
+                            height: 19.6 / 14,
                           ),
                         ),
                       ),

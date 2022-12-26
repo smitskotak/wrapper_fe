@@ -148,7 +148,7 @@ class FundCard extends StatelessWidget {
               delay: 1.seconds,
               duration: 500.milliseconds,
             ),
-        Positioned(
+        /* Positioned(
           top: -40,
           left: 0,
           right: 0,
@@ -169,7 +169,7 @@ class FundCard extends StatelessWidget {
                   .scale(duration: 1.seconds, curve: Curves.easeInBack),
             ],
           ),
-        ),
+        ), */
       ],
     );
   }
