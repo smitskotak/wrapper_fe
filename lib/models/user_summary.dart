@@ -8,7 +8,7 @@ class UserSummary {
     this.topInvested,
     required this.personality,
     this.equityExposure,
-    this.dateOfOnboarding,
+    required this.dateOfOnboarding,
     required this.urlString,
   });
 
@@ -20,7 +20,7 @@ class UserSummary {
   final TopInvestedItem? topInvested;
   final String personality;
   final String? equityExposure;
-  final String? dateOfOnboarding;
+  final String dateOfOnboarding;
   final String urlString;
 
   factory UserSummary.fromJson(Map<String, dynamic> json) => UserSummary(

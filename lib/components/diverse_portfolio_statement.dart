@@ -24,7 +24,7 @@ class DiversePortfolioStatement extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'You have maintained a diverse folio with',
+          'You have maintained a diverse portfolio with',
           style: GoogleFonts.roboto(
             textStyle: const TextStyle(
               fontWeight: FontWeight.w400,
