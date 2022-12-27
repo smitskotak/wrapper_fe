@@ -86,6 +86,7 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
               children: [
                 Text(
                   'Thank you!',
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                       fontWeight: FontWeight.bold,
@@ -107,6 +108,7 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
                   children: [
                     Text(
                       'For investing with Cherry',
+                      textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.w400,
@@ -118,6 +120,7 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
                     ),
                     Text(
                       'since $date',
+                      textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.w900,

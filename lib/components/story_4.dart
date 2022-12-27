@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -60,6 +61,7 @@ class Story4 extends StatelessWidget {
               const SizedBox(height: 55),
               Text(
                 'You are $suffix',
+                textAlign: TextAlign.center,
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.w500,
@@ -73,8 +75,10 @@ class Story4 extends StatelessWidget {
                     end: 0,
                   ),
               const SizedBox(height: 20),
-              Text(
+              AutoSizeText(
                 title,
+                maxLines: 1,
+                textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -91,6 +95,7 @@ class Story4 extends StatelessWidget {
               const SizedBox(height: 16),
               if (summary.equityExposure != null)
                 RichText(
+                  textAlign: TextAlign.center,
                   text: TextSpan(
                     text: 'You have ',
                     style: GoogleFonts.roboto(
@@ -237,9 +242,14 @@ class AdventurerIllustrations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.bottomLeft,
-      child: LottieBuilder.asset(
-        Assets.lottie.story4AdventurerIllustration,
-        repeat: false,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.of(context).size.height * 0.5,
+        ),
+        child: LottieBuilder.asset(
+          Assets.lottie.story4AdventurerIllustration,
+          repeat: false,
+        ),
       ),
     );
   }

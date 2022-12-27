@@ -26,9 +26,10 @@ class Story5 extends StatelessWidget {
             children: [
               const SizedBox(height: 40),
               Image.asset(Assets.images.cherryLogoColored.path),
-              const SizedBox(height: 55),
+              const SizedBox(height: 40),
               Text(
                 'You had a soft corner for',
+                textAlign: TextAlign.center,
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.w500,
@@ -46,16 +47,23 @@ class Story5 extends StatelessWidget {
                     end: 0,
                   )
                   .fadeIn(),
-              const SizedBox(height: 60),
+              const SizedBox(height: 20),
               const FundCard(),
             ],
           ),
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: LottieBuilder.asset(
-            Assets.lottie.story5PieChart,
-            repeat: false,
+        Positioned(
+          bottom: 0,
+          right: 0,
+          left: 0,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height * 0.6,
+            ),
+            child: LottieBuilder.asset(
+              Assets.lottie.story5PieChart,
+              repeat: false,
+            ),
           ),
         ),
       ],
@@ -95,7 +103,7 @@ class FundCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: [
-                const SizedBox(height: 40),
+                // const SizedBox(height: 40),
                 const SizedBox(height: 12),
                 Text(
                   topItem.name,

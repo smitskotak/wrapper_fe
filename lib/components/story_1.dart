@@ -88,14 +88,20 @@ class _Story1State extends State<Story1> with TickerProviderStateMixin {
             repeat: false,
           ),
         ),
-        Align(
-          alignment: Alignment.bottomRight,
-          child: LottieBuilder.asset(
-            Assets.lottie.story1WineGlass,
-            controller: _wineGlassAnimator,
-            onLoaded: (composition) =>
-                _wineGlassAnimator.duration = composition.duration,
-            repeat: false,
+        Positioned(
+          bottom: 0,
+          right: 0,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height * 0.4,
+            ),
+            child: LottieBuilder.asset(
+              Assets.lottie.story1WineGlass,
+              controller: _wineGlassAnimator,
+              onLoaded: (composition) =>
+                  _wineGlassAnimator.duration = composition.duration,
+              repeat: false,
+            ),
           ),
         ),
       ],
