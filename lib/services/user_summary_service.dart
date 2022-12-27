@@ -5,13 +5,15 @@ import 'package:wrapper/models/user_summary.dart';
 
 class UserSummaryService {
   Future<UserSummary> getUserSummary(String id) async {
-    // TODO: Replace with Unique Id based API
-    final response = await Dio().get(
+    /* final response = await Dio().get(
       'https://api.cherryko.tk/api/v1/roundup',
       queryParameters: {
         'iecu_id': id,
       },
-    );
+    ); */
+
+    final response =
+        await Dio().get('https://api.cherryko.tk/api/v1/roundup/$id');
 
     if (response.statusCode == HttpStatus.ok) {
       final json = Map<String, dynamic>.from(response.data['roundup']);
