@@ -23,14 +23,15 @@ class Story2 extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 62.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             children: [
               const SizedBox(height: 40),
               Image.asset(Assets.images.cherryLogo.path),
-              const SizedBox(height: 55),
+              const SizedBox(height: 40),
               Text(
                 'Your portfolio looks',
+                textAlign: TextAlign.center,
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.w500,
@@ -46,6 +47,7 @@ class Story2 extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 'CHERRY',
+                textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -61,6 +63,7 @@ class Story2 extends StatelessWidget {
                   .scale(),
               Text(
                 'TASTIC!',
+                textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -81,11 +84,17 @@ class Story2 extends StatelessWidget {
             ],
           ),
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: LottieBuilder.asset(
-            Assets.lottie.story2PieIllustration,
-            repeat: false,
+        Positioned(
+          bottom: 0,
+          left: 0,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width * 0.75,
+            ),
+            child: LottieBuilder.asset(
+              Assets.lottie.story2PieIllustration,
+              repeat: false,
+            ),
           ),
         ),
       ],

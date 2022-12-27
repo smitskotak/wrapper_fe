@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -23,8 +24,10 @@ class DiversePortfolioStatement extends StatelessWidget {
 
     return Column(
       children: [
-        Text(
+        AutoSizeText(
           'You have maintained a diverse portfolio with',
+          textAlign: TextAlign.center,
+          maxLines: 1,
           style: GoogleFonts.roboto(
             textStyle: const TextStyle(
               fontWeight: FontWeight.w400,
@@ -36,6 +39,7 @@ class DiversePortfolioStatement extends StatelessWidget {
         ),
         Text(
           investedString,
+          textAlign: TextAlign.center,
           style: GoogleFonts.roboto(
             textStyle: const TextStyle(
               fontWeight: FontWeight.w900,

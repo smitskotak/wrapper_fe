@@ -71,7 +71,7 @@ class StoriesViewerPage extends StatelessWidget {
                         return Column(
                           children: [
                             SizedBox(
-                              height: MediaQuery.of(context).padding.top + 24,
+                              height: MediaQuery.of(context).padding.top + 20,
                             ),
                             Expanded(
                               child: ConstrainedBox(

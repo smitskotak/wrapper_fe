@@ -27,7 +27,7 @@ class Story3 extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 62.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             children: [
               const SizedBox(height: 40),
@@ -35,6 +35,7 @@ class Story3 extends StatelessWidget {
               const SizedBox(height: 55),
               Text(
                 'You were one of the',
+                textAlign: TextAlign.center,
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.w400,
@@ -47,6 +48,7 @@ class Story3 extends StatelessWidget {
               const SizedBox(height: 30),
               Text(
                 "TOP ${summary.topPercent ?? ''}%",
+                textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -63,6 +65,7 @@ class Story3 extends StatelessWidget {
                   ),
               Text(
                 'INVESTORS IN CHERRY!',
+                textAlign: TextAlign.center,
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.w500,
@@ -75,11 +78,19 @@ class Story3 extends StatelessWidget {
             ],
           ),
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: LottieBuilder.asset(
-            Assets.lottie.story3Character,
-            repeat: false,
+        Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height * 0.45,
+            ),
+            child: LottieBuilder.asset(
+              Assets.lottie.story3Character,
+              repeat: false,
+              fit: BoxFit.fitWidth,
+            ),
           ),
         ),
       ],
