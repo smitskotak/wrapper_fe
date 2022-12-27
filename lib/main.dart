@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
+import 'package:wrapper/generated/assets.gen.dart';
 
 import 'screens/stories_viewer_page.dart';
 
@@ -32,4 +34,12 @@ final _router = GoRouter(
       },
     ),
   ],
+  errorBuilder: (context, state) => Scaffold(
+    body: Center(
+      child: LottieBuilder.asset(
+        Assets.lottie.error,
+        repeat: false,
+      ),
+    ),
+  ),
 );
