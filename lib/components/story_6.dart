@@ -80,7 +80,7 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
           left: 0,
           right: 0,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 62.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -141,12 +141,17 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
         ),
         Align(
           alignment: Alignment.bottomCenter,
-          child: LottieBuilder.asset(
-            Assets.lottie.story6Illustration,
-            controller: _bottomIllustrationAnimator,
-            onLoaded: (composition) =>
-                _bottomIllustrationAnimator.duration = composition.duration,
-            repeat: false,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height * 0.4,
+            ),
+            child: LottieBuilder.asset(
+              Assets.lottie.story6Illustration,
+              controller: _bottomIllustrationAnimator,
+              onLoaded: (composition) =>
+                  _bottomIllustrationAnimator.duration = composition.duration,
+              repeat: false,
+            ),
           ),
         ),
       ],
