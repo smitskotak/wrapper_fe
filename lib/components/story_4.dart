@@ -155,7 +155,7 @@ class ExplorerIllustrations extends StatelessWidget {
       fit: StackFit.expand,
       children: [
         Positioned(
-          top: MediaQuery.of(context).size.height * 0.35,
+          bottom: MediaQuery.of(context).size.height * 0.2,
           left: 0,
           right: 0,
           child: LottieBuilder.asset(
@@ -184,8 +184,12 @@ class ExplorerIllustrations extends StatelessWidget {
         Positioned(
           bottom: 0,
           left: 20,
-          child: Image.asset(
-            Assets.images.story4ExplorerCharacter.path,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.4),
+            child: Image.asset(
+              Assets.images.story4ExplorerCharacter.path,
+            ),
           ),
         ).animate().slideX(
               duration: 500.milliseconds,
@@ -195,9 +199,13 @@ class ExplorerIllustrations extends StatelessWidget {
             ),
         Positioned(
           bottom: 0,
-          right: -160,
-          child: Image.asset(
-            Assets.images.story4ExplorerFrontTree.path,
+          right: -80,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.4),
+            child: Image.asset(
+              Assets.images.story4ExplorerFrontTree.path,
+            ),
           ),
         ),
       ],
