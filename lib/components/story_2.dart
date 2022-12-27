@@ -89,7 +89,7 @@ class Story2 extends StatelessWidget {
           left: 0,
           child: ConstrainedBox(
             constraints: BoxConstraints(
-              maxWidth: MediaQuery.of(context).size.width * 0.75,
+              maxHeight: MediaQuery.of(context).size.height * 0.45,
             ),
             child: LottieBuilder.asset(
               Assets.lottie.story2PieIllustration,
