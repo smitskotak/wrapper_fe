@@ -224,16 +224,26 @@ class DefenderIllustrations extends StatelessWidget {
       children: [
         Align(
           alignment: Alignment.bottomCenter,
-          child: LottieBuilder.asset(
-            Assets.lottie.story4DefenderTempleTree,
-            repeat: false,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height * 0.5,
+            ),
+            child: LottieBuilder.asset(
+              Assets.lottie.story4DefenderTempleTree,
+              repeat: false,
+            ),
           ),
         ),
         Align(
           alignment: Alignment.bottomLeft,
-          child: LottieBuilder.asset(
-            Assets.lottie.story4DefenderCharacter,
-            repeat: false,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height * 0.5,
+            ),
+            child: LottieBuilder.asset(
+              Assets.lottie.story4DefenderCharacter,
+              repeat: false,
+            ),
           ),
         ),
       ],
