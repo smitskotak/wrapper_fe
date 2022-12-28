@@ -1,11 +1,11 @@
 {
-    "name": "wrapper",
-    "short_name": "wrapper",
+    "name": "Recap 2022",
+    "short_name": "Recap 2022",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
