@@ -107,7 +107,7 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
                 Column(
                   children: [
                     Text(
-                      'For investing with Cherry',
+                      'For investing with Cherry since',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
@@ -119,7 +119,7 @@ class _Story6State extends State<Story6> with TickerProviderStateMixin {
                       ),
                     ),
                     Text(
-                      'since $date',
+                      date,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
